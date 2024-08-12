@@ -373,6 +373,8 @@ func (t *ICETransport) collectStats(collector *statsReportCollector) {
 	if conn != nil {
 		stats.BytesSent = conn.BytesSent()
 		stats.BytesReceived = conn.BytesReceived()
+		stats.PacketsReceived = conn.PacketsReceived()
+		stats.PacketsSent = conn.PacketsSent()
 	}
 
 	collector.Collect(stats.ID, stats)
